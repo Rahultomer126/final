@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <iframe class="headerclass" src="head.html" frameborder="0" width="100%" height="90px" scrolling="no"></iframe>
+
+    <center>
+        <div class="listMain">
+            <div id="sidebar1">
+                <h1>Profile</h1>
+
+
+                <div class="profile-pic">
+                    <label class="-label" for="file">
+                        <span class="glyphicon glyphicon-camera"></span>
+                        <span>Change Image</span>
+                    </label>
+                    <input id="file" type="file" onchange="loadFile(event)" />
+                    <img src="https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png" id="output"
+                        width="200" />
+                </div>
+
+                <p>
+                    <ul style="font-size: 20px; color: rgb(8, 8, 78);">
+                        <li class="ll">Rahul</li>
+                        <li class="ll">Phone number: +91 9876543210</li>
+                        <li class="ll">Address: abc 123, IN</li>
+                        <li class="ll">Aadhaar number: 9876 6543 3210 0987</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div id="sidebar2">
+                <h1>My Tickets</h1>
+                <br><br><br>
+                <div class="ticketContainer">
+                    <div class="ticket">
+                      <div class="ticketTitle">Taj Mahal</div>
+                      <hr>
+                      <div class="ticketDetail">
+                        <div>Total:&nbsp; 4</div>
+                              <div class="ticketSubDetail">
+                                <div class="date">June 30<sup>th</sup>2023</div>
+                        <div class="time">Morning</div>
+                      </div>
+                  
+                      </div>
+                      <div class="ticketRip">
+                        <div class="circleLeft"></div>
+                        <div class="ripLine"></div>
+                        <div class="circleRight"></div>
+                      </div>
+                      <div class="ticketSubDetail">
+                        <div class="code"><a href="pay.png" target="_blank">Show QR</a></div>
+                        <div class="date"><a href="cancel.html" target="_blank">Cancel ticket</a></div>
+                      </div>
+                    </div>
+                    <div class="ticketShadow"></div>
+                  </div>
+                  <br>
+                
+
+            </div>
+        </div>
+    </center>
+    <iframe src="footer.html" frameborder="0" width="100%" height="390px"></iframe>
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+  <header>
+  <iframe class="headerclass" src="head.html" frameborder="0" width="100%" height="190px"></iframe>
+</header>
+  <div class="main">
+    <div class="cartMain">
+        <p
+          style="
+            text-align: center;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+          "
+        >
+          Book Your Ticket
+        </p>
+        <div class="login">
+          <div class="login-triangle"></div>
+  
+          <h2 class="login-header">Book</h2>
+  
+          <form class="login-container">
+            <p>
+              <input
+                type="text"
+                value="Ticket Price -- 50 Rs."
+                readonly
+              />
+            </p>
+            <p>
+              <input type="number" id="noOfAdults" placeholder="No of Adults" />
+            </p>
+            <p>
+              <input
+                type="number"
+                id="noOfChildren"
+                placeholder="No of Children"
+              />
+            </p>
+            <p>
+              <input
+                type="button"
+                id="priceButton"
+                value="Total amount"
+                onclick="calcPrice()"
+                readonly
+              />
+            </p>
+            <p>
+              <input type="text" id="price" value="Total Price: 0" readonly />
+            </p>
+  
+            <p style="text-align: center; color: white; background-color: #05a">
+              <a
+                style="width: 100%; text-decoration: none; color: white"
+                href="pay.html"
+                >Proceed to Payment</a
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>    <iframe src="footer.html" frameborder="0" width="100%" height="270px"></iframe>
+    </footer>
+</body>
+<script>
+  function calcPrice() {
+        var noOfAdults = parseInt(document.getElementById("noOfAdults").value);
+        var noOfChildren = parseInt(document.getElementById("noOfChildren").value);
+        var totalPrice = (noOfAdults * 50) + (noOfChildren * 50); // Assuming adult ticket price is 50 Rs and child ticket price is 25 Rs
+  
+        document.getElementById("price").value = "Total Price: " + totalPrice + " Rs";
+      }
+</script>
+</html>

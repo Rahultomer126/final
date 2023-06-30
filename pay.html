@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Payment Gateway</title>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="pay.css">
+</head>
+
+<body className='snippet-body'>
+    <iframe width="100%" src="C:\Users\HP\Desktop\Make my Ticket\Header\header.html" frameborder="0" ></iframe>
+    
+    <div class="container-fluid px-0" id="bg-div">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-12">
+                <div class="card card0">
+                    <div class="d-flex" id="wrapper">
+                        <!-- Sidebar -->
+                        <div class="bg-light border-right" id="sidebar-wrapper">
+                            <div class="sidebar-heading pt-5 pb-4"><strong>PAY WITH</strong></div>
+                            <div class="list-group list-group-flush"> <a data-toggle="tab" href="#menu1" id="tab1"
+                                    class="tabs list-group-item bg-light">
+                                    <div class="list-div my-2">
+                                        <div class="fa fa-home"></div> &nbsp;&nbsp; UPI
+                                    </div>
+                                </a> <a data-toggle="tab" href="#menu2" id="tab2" class="tabs list-group-item active1">
+                                    <div class="list-div my-2">
+                                        <div class="fa fa-credit-card"></div> &nbsp;&nbsp; Card
+                                    </div>
+                                </a> <a data-toggle="tab" href="#menu3" id="tab3" class="tabs list-group-item bg-light">
+                                    <div class="list-div my-2">
+                                        <div class="fa fa-qrcode"></div> &nbsp;&nbsp;&nbsp; Visa QR <span
+                                            id="new-label">NEW</span>
+                                    </div>
+                                </a> </div>
+                        </div> <!-- Page Content -->
+                        <div id="page-content-wrapper">
+                            <div class="row pt-3" id="border-btm">
+                                <div class="col-4"> <button class="btn btn-success mt-4 ml-3 mb-3" id="menu-toggle">
+                                        <div class="bar4"></div>
+                                        <div class="bar4"></div>
+                                        <div class="bar4"></div>
+                                    </button> </div>
+                                <div class="col-8">
+                                    <div class="row justify-content-right">
+                                        <div class="col-12">
+                                            <p class="mb-0 mr-4 mt-4 text-right">rahul@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-right">
+                                        <div class="col-12">
+                                            <p class="mb-0 mr-4 text-right">Pay <span class="top-highlight">Rs. 200</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="text-center" id="test">Pay</div>
+                            </div>
+                            <div class="tab-content">
+                                <div id="menu1" class="tab-pane">
+                                    <div class="row justify-content-center">
+                                        <div class="col-11">
+                                            <div class="form-card">
+                                                <h3 class="mt-0 mb-4 text-center">Enter bank details to pay</h3>
+                                                <form onsubmit="event.preventDefault()">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="input-group"> <input type="text" id="bk_nm"
+                                                                    placeholder="makemyyatra@paytm"> <label>UPI ID or number</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-md-12"> <button class="bbtn"><a class="aa" href="qr.html">Pay Rs. 200</a></button>
+                                                            
+                                                            <!-- <input type="submit" value="Pay Rs. 100"
+                                                                class="btn btn-success placeicon"> </a>-->  
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu2" class="tab-pane in active">
+                                    <div class="row justify-content-center">
+                                        <div class="col-11">
+                                            <div class="form-card">
+                                                <h3 class="mt-0 mb-4 text-center">Enter your card details to pay</h3>
+                                                <form onsubmit="event.preventDefault()">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="input-group"> <input type="text" id="cr_no"
+                                                                    placeholder="0000 0000 0000 0000" minlength="19"
+                                                                    maxlength="19"> <label>CARD NUMBER</label> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="input-group"> <input type="text" id="cr_no"
+                                                                    placeholder="Name" minlength="19"
+                                                                    maxlength="19"> <label>CARD HOLDER NAME</label> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="input-group"> <input type="text" name="exp"
+                                                                    id="exp" placeholder="MM/YY" minlength="5"
+                                                                    maxlength="5"> <label>CARD EXPIRY</label> </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="input-group"> <input type="password"
+                                                                    name="cvcpwd" placeholder="&#9679;&#9679;&#9679;"
+                                                                    class="placeicon" minlength="3" maxlength="3">
+                                                                <label>CVV</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12"> <button class="bbtn"><a class="aa" href="qr.html">Pay Rs. 200</a></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu3" class="tab-pane">
+                                    <div class="row justify-content-center">
+                                        <div class="col-11">
+                                            <h3 class="mt-0 mb-4 text-center">Scan the QR code to pay</h3>
+                                            <h5 class="mt-0 mb-4 text-center">You are being redirected to next page</h5>
+
+                                            <div class="row justify-content-center">
+                                                <div id="qr"> <img src="pay.png" width="200px"
+                                                        height="200px"> </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12"> <button class="bbtn"><a class="aa" href="qr.html">Pay Rs. 100</a></button>
+                                                    
+                                                    <!-- <input type="submit" value="Pay Rs. 100"
+                                                        class="btn btn-success placeicon"> </a>-->  
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="waves">
+          <div class="wave" id="wave1"></div>
+          <div class="wave" id="wave2"></div>
+          <div class="wave" id="wave3"></div>
+          <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social-icon">
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+        </ul>
+        <ul class="menu">
+          <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+    
+        </ul>
+      </footer>
+
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+
+    <script type='text/javascript' src="pay.js"></script>
+    <script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
+        myLink.addEventListener('click', function (e) {
+            e.preventDefault();
+        });</script>
+
+</body>
+
+</html>

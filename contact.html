@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+    <section>
+        <iframe class="headerclass" src="head.html" frameborder="0" width="100%" height="90px" scrolling="no"></iframe>
+
+    </section>
+    <section class="contact-container">
+        <div class="contact-logo">
+            
+        </div>
+        <form action="" id="contact-form">
+            <center><div class="alert">Your querry is submitted!</div></center>
+            <br><br>
+
+            <div class="heading">
+                <h2>CONTACT US</h2>
+                <p>feel free to reach out to us, we'd love to hear from you!</p>
+            </div>
+            <div class="input">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" placeholder="Name" id="name"/>
+            </div>
+            <div class="input">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Email" id="email"/>
+            </div>
+            <div class="input">
+                <i class="fa-regular fa-message"></i>
+                <textarea cols="30" rows="10" placeholder="Message" style="resize: none" id="message"></textarea>
+            </div>
+            <button type="submit" class="button" id="submit" >Submit</button>
+        </form>
+        <div class="contact-info">
+            <h3 class="heading">OUR INFORMATIONS</h3>
+            <ul class="contacts">
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    abc 123, IN
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@bookmyticket.com
+                </li>
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    9876543210
+                </li>
+                <li>
+                    <i class="fa-solid fa-print"></i>
+                    1234567890
+                </li>
+            </ul>
+            <div class="social-links"></div>
+        </div>
+    </section>
+    <section class="footer">
+        <iframe src="footer.html" frameborder="0" width="100%" height="300px"></iframe>
+
+    </section>
+</body>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> -->
+
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+
+<script src="contact.js"></script>
+</html>

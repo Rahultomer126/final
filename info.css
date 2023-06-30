@@ -1,0 +1,29 @@
+body {
+    overflow-x: hidden;
+    /* background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url('background.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  } 
+
+  .drop {
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 10px 30px 10px 20px;
+    background-color: #ffffff;
+    cursor: pointer;
+    white-space: nowrap;
+  } 
+
+  .btn{
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 10px 30px 10px 20px;
+    background-color: #ffffff;
+    cursor: pointer;
+    white-space: nowrap;
+  }  
+
+

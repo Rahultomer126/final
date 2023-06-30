@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <link rel="stylesheet" href="info.css">
+</head>
+
+<body>
+    <iframe class="headerclass" src="head.html" frameborder="0" width="100%" height="90px" scrolling="no"></iframe>
+
+    <p style="text-align: center; color: rgb(0, 0, 0); font-size: 45px;">Monuments</p>
+
+    <select id="city" style="float: left; margin-left: 390px" class="btn">
+        <option value="">Select a city</option>
+        <option value="delhi">Delhi</option>
+        <option value="gujarat">Gujarat</option>
+        <option value="rajasthan">Rajashthan</option>
+        <option value="uttarpradesh">Uttar Pradesh</option>
+        <option value="westbengal">West Bengal</option>
+    </select>
+
+    <select id="monument" disabled style="float: right; margin-right: 390px" class="btn">
+        <option value="">Select a monument</option>
+    </select>
+    <br><br><br>
+    <div id="result">
+        <img src="" alt="">
+        <h2></h2>
+        <p></p>
+    </div>
+
+</body>
+<script>
+    const monuments = {
+        delhi: [
+            {
+                name: "Qutub Minar",
+                description: "Qutub Minar is one of the most famous tourist destinations in India. The minaret was constructed by Qutab-ud-din Aibak and later completed by his successor Iltutmish in 1192. Qutub Minar holds the title for the highest individual tower in the world with a height of 234 feet. It also makes it into the list of the tallest and most famous towers in the world. It proudly displays the beauty of Indo-Islamic Afghan architecture untouched by the time it has seen. Qutub Minar is a World Heritage Site. It is India’s most visited monument attracting around 3.9 million visitors every year.",
+                image: "https://cdn.pixabay.com/photo/2017/03/19/08/01/qutub-minar-2155776_1280.jpg",
+                img: "Fees/Qutub minar fees.png"
+            },
+            {
+                name: "Red Fort",
+                description: "Red Fort popularly known as Lal Qila is one of the most haunting spots for tourists. This magnificent fort on the banks of the river Yamuna, is a living piece of history from 17th Century Delhi. This fort was constructed by Shahjahan who also built the wonder of the world Taj Mahal. The whole structure is made of Red stone. Construction of Red Fort started in 1639 and within a span of 9 years, the colossal structure was built. The Red Fort has the highest pedestal as a historical monument in Indian democracy as the site plays a host for the Prime Minister of India as he addresses the nation on August 15.",
+                image: "https://media.istockphoto.com/id/692983144/photo/red-fort-delhi-a-historic-red-sandstone-fort-city-in-delhi-designated-as-the-unesco-world.jpg?b=1&s=170667a&w=0&k=20&c=8cLxZTG_dgYO_pibRzv0QESprWcok_QL2xBleCAC2W0=",
+                img: "Fees/Red fort fees.png"
+            },
+            {
+                name: "Safdarjung Tomb",
+                description: "Safdarjung Tomb, also called the Tomb of Safdarjung or Safdarjung ka Maqbara, is a Mughal-era monument located in the Delhi city. The tomb was built in the eighteenth century during Ahmad Shah Bahadur’s rule. The monument was built using marble and sandstone. Nawab Shujaud Daula, Safdarjung’s son, proposed building a mausoleum in Safdarjung’s name. The Safdarjung Tomb is the last garden tomb that displays the dominant architecture during the Mughal period.",
+                image: "https://cdn.pixabay.com/photo/2022/02/08/15/06/tomb-7001561_1280.jpg",
+                img: "Fees/Safdarjung Fees.png"
+            },
+            {
+                name: "Lotus Temple",
+                description: "Lotus Temple is built in the shape of a lotus flower amidst the lush green landscape that turn up to a pleasant and tranquil ambience. It is a Bahai House of Worship and is open to people from all religions. The Bahaí Faith is a world religion whose purpose is to unite all races and peoples in one universal Cause and one common Faith.",
+                image: "https://cdn.pixabay.com/photo/2013/03/14/16/46/lotus-temple-93564_1280.jpg",
+                img: "Fees/Lotus temple fees.png"
+            }
+        ],
+        gujarat: [
+            {
+                name: "Statue of unity",
+                description: "The statue has been built as an ode to the Iron Man of India, Sardar Vallabhbhai Patel, the first home minister of independent India. He was responsible for uniting all 562 princely states of the country to build the Republic of India. October 31st, 2018, marked the inauguration of the world’s tallest statue – the Statue of Unity, against the backdrop of the dramatic Satpura and Vindhyachal hills in Kevadia, Gujarat. It stands on the Sadhu Bet hillock, connected by a 300-metre bridge, which offers access from the mainland to the statue.",
+                image: "https://cdn.pixabay.com/photo/2021/10/03/14/34/statue-6678154_1280.jpg",
+                img: "Fees/Statue of unity fees.png"
+            },
+            {
+                name: "National Salt Satyagraha Memorial",
+                description: "National Salt Satyagraha Memorial or Dandi Memorial located in Dandi, Gujarat, India, is designed as an experiential journey that recreates the spirit and energy of Mahatma Gandhi's 1930 Dandi March. Visitors are guided step-by-step through the monument to help them envision and comprehend the history of the famous Dandi March and the Satyagraha approach, which ultimately resulted in gaining India's independence from British colonial rule",
+                image: "https://www.shreeganeshcorp.com/wp-content/uploads/2018/12/dandi-memorial2.jpg",
+                img: "Fees/National salt fees.png"
+            }
+        ],
+        rajasthan: [
+            {
+                name: "Hawa Mahal",
+                description: "Hawa Mahal or the 'Palace Of The Winds' located in the heart of the beautiful Pink City of Jaipur in Rajasthan, India. Is one of the most famous tourist attractions and a prominent landmark of the city that is renowned for its rich cultural and architectural history. Built in 1799 by Maharaja Sawai Pratap Singh of the Kachhwaha Rajput dynasty, this beautiful structure is predominantly a high screen wall made of pink and red sandstone. This five-storey building in the shape of a crown of Lord Krishna with 953 jharokhas or windows and a beautifully decorated resembling a honeycomb of a beehive that gives one a feel of the rich heritage of the Rajputs.",
+                image: "https://cdn.pixabay.com/photo/2021/10/07/10/43/hawa-mahal-6688170_1280.jpg",
+                img: "Fees/Hawa mahal fees.png"
+            },
+            {
+                name: "Bhangarh Fort",
+                description: "This ancient township was founded by Raja Bhagwan Das, the then ruler of Amber in the later half of sixteenth century and was made capital of Madho Singh, brother of Raja Man Singh. The remains at Bhangadh consist of fort walls, bazars, havelis, temples, royal palaces, maqbara, etc. Among temples, important are Gopinath temple, Somesvara temple, Keshava Rai temple, and Mangla Devi temple. The royal palace is said to have seven storeys known asSatamahala but now only four storeys remain. A stone inscription on the bank of the Som Sagar Talav, 5 km away from Bhangadh, reveals that Madho Singh was Diwan in the court of Mughal emperor Akbar.",
+                image: "https://seoimgak.mmtcdn.com/blog/sites/default/files/images/bhangarh-fort-wikimedia-commons.jpg",
+                img: "Fees/Bhangarh fort fees.png"
+            }
+        ],
+        uttarpradesh: [
+            {
+                name: "Agra Fort",
+                description: "Agra Fort was built in the year 1573 under the reign of Akbar – one of the greatest Mughal Emperors. It took more than 4000 workers and eight years of hardship to complete the fort. Knowing the significance of its location, Akbar built the fort to make it the main residence of the Mughals. The fort remained as the main residence of the emperors belonging to the Mughal dynasty until the year 1638. The fort houses numerous impressive structures like the Jahangir Mahal, Khas Mahal, Diwan-i-Khass, Diwan-i-Am, Machchhi Bhawan and Moti Masjid. In 1638, the capital of the Mughal dynasty was moved from Agra to Delhi, causing the Agra Fort to lose its status as the main residence of the Mughal emperors.",
+                image: "https://cdn.pixabay.com/photo/2020/07/09/17/21/agra-fort-5388099_1280.jpg",
+                img: "Fees/Agra fort fees.png"
+            },
+            {
+                name: "Taj Mahal",
+                description: "Taj Mahal is located on the banks of River Yamuna in Agra. It was built by the Mughal Emperor Shah Jahan as a memorial for his third wife, Mumtaz Mahal. It also houses the tomb of Shah Jahan himself. Constructed entirely out of white marble in the 17th century, Taj Mahal is one of the most beautiful monuments in the world. Every year visitors numbering more than the entire population of Agra pass through the magnificent gates to catch a glimpse of this breathtaking monument!",
+                image: "https://cdn.pixabay.com/photo/2015/07/29/22/56/taj-mahal-866692_1280.jpg",
+                img: "Fees/Taj mahal fees.png"
+            }
+        ],
+        westbengal: [
+            {
+                name: "Victoria Memorial",
+                description: "The Victoria Memorial, a huge monument made of white marble located in the heart of the City of Joy, Kolkata (erstwhile Calcutta) in West Bengal. A brainchild of George Curzon, 1st Marquess Curzon of Kedleston and Viceroy of India, this monument epitomising beauty and elegance was dedicated to the memory of Queen Victoria (1819–1901). This grand and exquisite memorial not only stands as reminiscence to the rule of British Crown in the Indian subcontinent but also stands out as an excellent architectural gem in Indo-Saracenic revivalist style. It is a must visit tourist destination for first time visitors to experience the essence of Victorian era in the midst of the bustling metro city of Kolkata.",
+                image: "https://cdn.pixabay.com/photo/2018/05/08/07/33/indian-museum-3382432_1280.jpg",
+                img: "Fees/Victoria fees.png"
+            },
+            {
+                name: "Town Hall",
+                description: "The main motive behind erecting such a magnificently artistic structure was to give the Europeans a venue to host their various social gatherings. Partially accessible to the public, a special committee was formed that governed the administration of the hall under specific terms and conditions. The Town Hall came under the control of the Calcutta Municipality in the year 1867 following renovations in the next thirty years. Post-independence of India in the year 1947, witnessed the Town Hall in dilapidation. Memorable moments occurred within the walls of the Town Hall such as the celebration of Rabindranath Tagore’s 50th and 70th birthdays, Acharya Jagadish Chandra Bose unveiling his experiment on wireless communication and Amartya Sen delivering lectures, among others.",
+                image: "https://cdn.pixabay.com/photo/2020/03/29/19/20/main-market-4981934_1280.jpg",
+                img: "Fees/Town hall fees.png"
+            }
+        ]
+    };
+
+    const citySelect = document.getElementById("city");
+    const monumentSelect = document.getElementById("monument");
+    const resultDiv = document.getElementById("result");
+
+    citySelect.addEventListener("change", function () {
+        monumentSelect.disabled = true;
+        monumentSelect.innerHTML = "<option value=''>Select a monument</option>";
+
+        if (citySelect.value !== "") {
+            const selectedMonuments = monuments[citySelect.value];
+
+            for (let i = 0; i < selectedMonuments.length; i++) {
+                const option = document.createElement("option");
+                option.value = selectedMonuments[i].name;
+                option.textContent = selectedMonuments[i].name;
+                monumentSelect.appendChild(option);
+            }
+
+            monumentSelect.disabled = false;
+        }
+
+        resultDiv.innerHTML = "";
+    });
+
+    monumentSelect.addEventListener("change", function () {
+        const selectedMonument = monuments[citySelect.value].find(monument => monument.name === monumentSelect.value);
+
+        resultDiv.innerHTML = `
+    <h2 style="margin-left: 50px;">${selectedMonument.name}</h2>
+    <p style="color: black; font-size: 20px; margin-left: 50px; margin-right: 50px">${selectedMonument.description}</p>
+    <img src="${selectedMonument.image}" alt="${selectedMonument.name}" style="margin-left: 50px; width: 750px; height: 350px;">
+    <img src="${selectedMonument.img}" alt="${selectedMonument.name}" style="float: right; top: -70px; margin-left: 60px; width: 550px; height: 300px;">
+    <br>
+    <a href="book.html"><button class="btn" style="margin-top: 50px; margin-left: 1300px; display: inline-block; border: 1px solid gray; border-radius: 4px; padding: 10px 30px 10px 20px; background-color: #ffffff; cursor: pointer; white-space: nowrap;"><center>SUBMIT</center></button></a>
+  `;
+    });
+</script>
+
+</html>
